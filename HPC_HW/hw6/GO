@@ -1,0 +1,20 @@
+#!/usr/bin/sh
+echo 'Running N = 100 against p=2,4,8'
+sbatch p2_0.sh
+sbatch p4_0.sh
+sbatch p8_0.sh
+sleep 10
+cat p2_0.out p4_0.out p8_0.out
+echo 'Running N = 10000 against p=2,4,8'
+sbatch p2_1.sh
+sbatch p4_1.sh
+sbatch p8_1.sh
+sleep 10
+cat p2_1.out p4_1.out p8_1.out
+echo 'Running N = 1000000 against p=2,4,8'
+sbatch p2_2.sh
+sbatch p4_2.sh
+sbatch p8_2.sh
+sleep 10
+cat p2_2.out p4_2.out p8_2.out
+
